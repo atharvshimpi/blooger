@@ -39,10 +39,10 @@ const Blog = ({ blog, setCurrentId }) => {
                         fontSize: "1.5rem"
                     }}>{blog.description}</p>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        {(user?.result?.id === blog?.creator || user?.result?.googleId === blog?.creator) && 
+                        {(user?.result?._id === blog?.creator || user?.result?.googleId === blog?.creator) && 
                         <p><a class="waves-effect waves-light btn" onClick={() => dispatch(deleteBlog(blog._id))}>Delete Blog</a></p>
                         }
-                        {(user?.result?.id === blog?.creator || user?.result?.googleId === blog?.creator) &&
+                        {(user?.result?._id === blog?.creator || user?.result?.googleId === blog?.creator) &&
                         <p><a class="waves-effect waves-light btn" onClick={() => { setCurrentId(blog._id) }}>Edit Blog</a></p>
                         }
                     </div>

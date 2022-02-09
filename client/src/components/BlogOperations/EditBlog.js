@@ -11,10 +11,10 @@ import "./style.css"
 
 const EditBlog = ({ currentId, setCurrentId }) => {
 
-    const [blogData, setBlogData] = useState({ title: '', description: '', selectedFile: '', genre: '' });
-    const blog = useSelector((state) => (currentId ? state.blogs.find((message) => message.id === currentId) : null));
-    const dispatch = useDispatch();
     const user = JSON.parse(localStorage.getItem('profile'));
+    const [blogData, setBlogData] = useState({ title: '', description: '', selectedFile: '', genre: '' });
+    const blog = useSelector((state) => (currentId ? state.blogs.find((msg) => msg._id === currentId) : null));
+    const dispatch = useDispatch();
 
     useEffect(() => {
       if (blog) setBlogData(blog);
@@ -44,7 +44,9 @@ const EditBlog = ({ currentId, setCurrentId }) => {
       dispatch(updateBlog(currentId, { ...blogData, name: user?.result?.name }));
       setCurrentId(0);
 
-      setTimeout(function(){ window.location.reload() }, 3)
+      setTimeout(function() { 
+        window.location.reload() 
+      }, 3);
     };
 
     return (
@@ -92,7 +94,7 @@ const EditBlog = ({ currentId, setCurrentId }) => {
           </div>
           <div class="row" style={{ marginLeft: '0 !important' }}>
             <div class="input-field col s8">
-              <select id="select" onChange={show} >
+              <select id="select" onChange={show} value={blogData.genre}>
                 <option value="" disabled selected>Choose any one</option>
                 <option value="Science & Technology">Science & Technology</option>
                 <option value="Social">Social</option>

@@ -16,8 +16,7 @@ const Blogs = ({ setCurrentId }) => {
             <BlogsLoadingContainer>
                 <div class="progress" 
                     style={{ 
-                    marginTop: '20rem',
-                    width: '50%'
+                        width: '50%'
                     }}>
                     <div class="indeterminate"></div>
                 </div>
@@ -49,4 +48,5 @@ export const BlogsLoadingContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 `
