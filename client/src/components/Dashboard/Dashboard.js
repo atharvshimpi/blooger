@@ -32,9 +32,9 @@ const Dashboard = () => {
           <DashboardContainer>
             <Blogs setCurrentId={setCurrentId} />  
             <RecentPosts>
-              <h2 class="white-text" style={{ marginLeft: '10px' }}>Recent Posts</h2>
+              <h2 className="white-text" style={{ marginLeft: '10px' }}>Recent Posts</h2>
               {blogs.slice(0, 5).map((blog) => (
-                <div style={{ margin: '0 10px' }}>
+                <div style={{ margin: '0 10px' }} key={blog._id}>
                   <LinkS 
                     to={blog._id}
                     smooth={true}
@@ -51,7 +51,7 @@ const Dashboard = () => {
         </>
         }
         <DashboardAddBtn>
-          <div class="btn-floating btn-large waves-effect waves-light #438D80" onClick={() => { history.push('/createblog'); } } ><i class="material-icons">add</i></div>
+          <div className="btn-floating btn-large waves-effect waves-light #438D80" onClick={() => { history.push('/createblog'); } } ><i className="material-icons">add</i></div>
         </DashboardAddBtn>
       </>
     );

@@ -58,33 +58,33 @@ const CreateBlog = () => {
       <DashboardNavbar />
       <BlogContainer>
         <h4>Create Blog</h4>
-        <form class="col s12" noValidate onSubmit={handleSubmit}>
-          <div class="row">
-            <div class="input-field col s6">
+        <form className="col s12" noValidate onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="input-field col s6">
               <input 
                 required 
                 id="title" 
                 type="text" 
-                class="validate"
+                className="validate"
                 value={blogData.title}
                 onChange={(e) => setBlogData({ ...blogData, title: e.target.value })}
               />
-              <label for="title">Title</label>
+              <label htmlFor="title">Title</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s8">
+          <div className="row">
+            <div className="input-field col s8">
               <textarea 
                 id="textarea" 
-                class="materialize-textarea"
+                className="materialize-textarea"
                 value={blogData.description}
                 onChange={(e) => setBlogData({ ...blogData, description: e.target.value })}
               ></textarea>
-              <label for="textarea">Textarea</label>
+              <label htmlFor="textarea">Textarea</label>
             </div>
           </div>
-          <div class="file-field input-field">
-            <div class="btn">
+          <div className="file-field input-field">
+            <div className="btn">
               <span>File</span>
               <FileBase 
                 type="file"
@@ -92,15 +92,15 @@ const CreateBlog = () => {
                 onDone={({ base64 }) => setBlogData({ ...blogData, selectedFile: base64 })}
               />
             </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" />
+            <div className="file-path-wrapper">
+              <input className="file-path validate" type="text" />
             </div>
           </div>
-          <div class="row" style={{ marginLeft: '0 !important' }}>
-            <div class="input-field col s8">
-              <select id="select" onChange={show} >
-                <option value="" disabled selected>Choose any one</option>
-                <option value="Science & Technology">Science & Technology</option>
+          <div className="row" style={{ marginLeft: '0 !important' }}>
+            <div className="input-field col s8">
+              <select id="select" onChange={show} defaultValue="">
+                <option value="" disabled>Choose any one</option>
+                <option value="Science &amp; Technology">Science &amp; Technology</option>
                 <option value="Social">Social</option>
                 <option value="Economical">Economical</option>
                 <option value="Political">Political</option>
@@ -109,14 +109,14 @@ const CreateBlog = () => {
               <label>Category of Blog</label>
             </div>
           </div>
-          <div class="row" id="show" style={{ marginLeft: '0 !important' }}>
-            <div class="input-field col s6">
+          <div className="row" id="show" style={{ marginLeft: '0 !important' }}>
+            <div className="input-field col s6">
               <input 
                 id="other" 
                 type="text"
                 onChange={(e) => setBlogData({ ...blogData, genre: e.target.value })}
               />
-              <label class="active">Other</label>
+              <label className="active">Other</label>
             </div>
           </div>
           <button
@@ -128,7 +128,7 @@ const CreateBlog = () => {
             type="submit"
             className="btn btn-large waves-effect waves-light hoverable #438d80 accent-3"
             >
-            Create Blog
+              Create Blog
            </button>
         </form>
       </BlogContainer>

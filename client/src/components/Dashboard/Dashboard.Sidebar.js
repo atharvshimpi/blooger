@@ -14,6 +14,7 @@ const DashboardSidebar = ({toggleShow, isShow}) => {
     const dispatch = useDispatch();
     const location = useLocation();
     const history = useHistory();
+    const token = user?.token;
 
     const logout = () => {
         dispatch({ type: actionType.LOGOUT });
@@ -24,15 +25,13 @@ const DashboardSidebar = ({toggleShow, isShow}) => {
     };
     
     useEffect(() => {
-    const token = user?.token;
-    
-    if (token) {
-      const decodedToken = decode(token);
-    
-      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-    }
-    
-    setUser(JSON.parse(localStorage.getItem('profile')));
+        
+        if (token) {
+            const decodedToken = decode(token);
+            if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+        }
+        
+        setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
     return (

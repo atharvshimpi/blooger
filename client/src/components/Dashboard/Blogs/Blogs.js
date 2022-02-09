@@ -14,11 +14,11 @@ const Blogs = ({ setCurrentId }) => {
     return(
         !blogs.length ? (
             <BlogsLoadingContainer>
-                <div class="progress" 
+                <div className="progress" 
                     style={{ 
                         width: '50%'
                     }}>
-                    <div class="indeterminate"></div>
+                    <div className="indeterminate"></div>
                 </div>
             </BlogsLoadingContainer>
         ) : (
@@ -49,4 +49,5 @@ export const BlogsLoadingContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: calc(100vh - 150px);
 `

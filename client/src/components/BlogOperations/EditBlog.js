@@ -54,33 +54,33 @@ const EditBlog = ({ currentId, setCurrentId }) => {
       <DashboardNavbar />
       <BlogContainer>
         <h4>Edit Blog</h4>
-        <form class="col s12" noValidate onSubmit={handleSubmit}>
-          <div class="row">
-            <div class="input-field col s6">
+        <form className="col s12" noValidate onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="input-field col s6">
               <input 
                 required 
                 id="title" 
                 type="text" 
-                class="validate"
+                className="validate"
                 value={blogData.title}
                 onChange={(e) => setBlogData({ ...blogData, title: e.target.value })}
               />
-              <label class="active" for="title">Title</label>
+              <label className="active" for="title">Title</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s8">
+          <div className="row">
+            <div className="input-field col s8">
               <textarea 
                 id="textarea" 
-                class="materialize-textarea"
+                className="materialize-textarea"
                 value={blogData.description}
                 onChange={(e) => setBlogData({ ...blogData, description: e.target.value })}
               ></textarea>
-              <label class="active" for="textarea">Textarea</label>
+              <label className="active" for="textarea">Textarea</label>
             </div>
           </div>
-          <div class="file-field input-field">
-            <div class="btn">
+          <div className="file-field input-field">
+            <div className="btn">
               <span>File</span>
               <FileBase 
                 type="file"
@@ -88,12 +88,12 @@ const EditBlog = ({ currentId, setCurrentId }) => {
                 onDone={({ base64 }) => setBlogData({ ...blogData, selectedFile: base64 })}
               />
             </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" />
+            <div className="file-path-wrapper">
+              <input className="file-path validate" type="text" />
             </div>
           </div>
-          <div class="row" style={{ marginLeft: '0 !important' }}>
-            <div class="input-field col s8">
+          <div className="row" style={{ marginLeft: '0 !important' }}>
+            <div className="input-field col s8">
               <select id="select" onChange={show} value={blogData.genre}>
                 <option value="" disabled selected>Choose any one</option>
                 <option value="Science & Technology">Science & Technology</option>
@@ -105,14 +105,14 @@ const EditBlog = ({ currentId, setCurrentId }) => {
               <label>Category of Blog</label>
             </div>
           </div>
-          <div class="row" id="show" style={{ marginLeft: '0 !important' }}>
-            <div class="input-field col s6">
+          <div className="row" id="show" style={{ marginLeft: '0 !important' }}>
+            <div className="input-field col s6">
               <input 
                 id="other" 
                 type="text"
                 onChange={(e) => setBlogData({ ...blogData, genre: e.target.value })}
               />
-              <label class="active">Other</label>
+              <label className="active">Other</label>
             </div>
           </div>
           <button
@@ -122,7 +122,7 @@ const EditBlog = ({ currentId, setCurrentId }) => {
               marginTop: "1rem"
             }}
             type="submit"
-            className="btn btn-large waves-effect waves-light hoverable #438d80 accent-3"
+            classNameName="btn btn-large waves-effect waves-light hoverable #438d80 accent-3"
             >
             Edit Blog
            </button>

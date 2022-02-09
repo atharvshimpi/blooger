@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Blog from "../Dashboard/Blogs/Blog/BlogCard";
 import DashboardNavbar from "../Dashboard/Dashboard.Navbar";
-import { DashboardAddBtn, DashboardContainer } from "../Dashboard/Dashboard.Elements";
+import { DashboardAddBtn } from "../Dashboard/Dashboard.Elements";
 import { BlogsLoadingContainer as BlogsContainer } from "../Dashboard/Blogs/Blogs";
 import { useHistory } from "react-router-dom";
 
@@ -17,11 +17,10 @@ const YourBlogs = () => {
             <>
                 <DashboardNavbar />
                 <BlogsContainer>
-                    <div class="progress" style={{ 
-                        marginTop: '27rem',
+                    <div className="progress" style={{ 
                         width: '50%'
                     }}>
-                        <div class="indeterminate"></div>
+                        <div className="indeterminate"></div>
                     </div>
                 </BlogsContainer>
             </>
@@ -44,7 +43,7 @@ const YourBlogs = () => {
                         ))}
                     </YourBlogsContainer>
                     <DashboardAddBtn>
-                        <a class="btn-floating btn-large waves-effect waves-light #438D80" onClick={() => { history.push('/createblog'); } } ><i class="material-icons">add</i></a>
+                        <a className="btn-floating btn-large waves-effect waves-light #438D80" onClick={() => { history.push('/createblog'); } } ><i className="material-icons">add</i></a>
                     </DashboardAddBtn>
                 </>
                 )
